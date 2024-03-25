@@ -19,9 +19,11 @@ function Staff() {
         try {
             const { data } = await axiosClient.get('staff');
             setStaffList(data.result);
+            if (typeof window !== 'undefined') {
             setTimeout( function(){
                 $('table').dataTable();
             }, 300);
+            }
         } catch (error) {
             console.error('Error fetching drivers:', error);
         }
