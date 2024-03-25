@@ -15,9 +15,11 @@ function AcuStatusList() {
         try {
             const { data } = await axiosClient.get('acu_status');
             setAcu_status(data.result);
-            setTimeout( function(){
-                $('table').dataTable();
-            }, 300);
+             if (typeof window !== 'undefined') {
+                setTimeout( function(){
+                    $('table').dataTable();
+                }, 300);
+             }
         } catch (error) {
             console.error('Error fetching agencies:', error);
         }
