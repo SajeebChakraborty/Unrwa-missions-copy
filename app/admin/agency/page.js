@@ -145,7 +145,7 @@ function AgencyList() {
                                  <button
                                   onClick={async () => {
                                       // Show a confirmation alert
-                                      const confirmed = window.confirm("Are you sure you want to delete?");
+                                      const confirmed = 1;
 
                                       if (confirmed) {
                                           // Make a DELETE request to your API to mark the question as deleted
