@@ -13,9 +13,11 @@ function MissionClassificationList() {
         try {
             const { data } = await axiosClient.get('misson-classification');
             setMissionClassificationList(data.result);
+            if (typeof window !== 'undefined') {
             setTimeout( function(){
                 $('table').dataTable();
             }, 300);
+            }
         } catch (error) {
             console.error('Error fetching misson-classifications:', error);
         }
