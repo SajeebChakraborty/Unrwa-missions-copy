@@ -3,7 +3,6 @@ import axiosClient from "@/app/axiosClient";
 import $ from 'jquery';
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Swal from 'sweetalert2';
 import '../../../node_modules/datatables/media/css/jquery.dataTables.min.css';
 import '../../../node_modules/datatables/media/js/jquery.dataTables.min';
 
@@ -93,12 +92,7 @@ function AcuStatusList() {
                                                       'Content-Type': 'application/json',
                                                   },
                                               });
-                                              Swal.fire({
-                                                title: 'success',
-                                                text: 'Successfully Deleted',
-                                                icon: 'success',
-                                                // confirmButtonText: 'Cool'
-                                            })
+                                            
 
                                               //setMessage('Delete successfully');
                                               // Remove the deleted question from the state
