@@ -61,7 +61,7 @@ function Cargo() {
                     </a>
                         <button
                             onClick={async () => {
-                                const confirmed = window.confirm("Are you sure you want to delete?");
+                                const confirmed = 1;
 
                                 if (confirmed) {
                                     try {
