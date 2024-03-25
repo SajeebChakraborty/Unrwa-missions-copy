@@ -15,9 +15,11 @@ function DepartmentList() {
         try {
             const { data } = await axiosClient.get('department');
             setDepartmentList(data.result);
+            if (typeof window !== 'undefined') {
             setTimeout( function(){
                 $('table').dataTable();
             }, 300);
+            }
         } catch (error) {
             console.error('Error fetching agencies:', error);
         }
