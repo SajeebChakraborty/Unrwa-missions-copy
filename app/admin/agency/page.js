@@ -12,16 +12,18 @@ function AgencyList() {
     const api_base_url = process.env.NEXT_PUBLIC_API_BASE_URL;
 
     const fetchData = async () => {
-        try {
-            const { data } = await axiosClient.get('agency');
-            setAgencyList(data.result);
-            setTimeout( function(){
+    try {
+        const { data } = await axiosClient.get('agency');
+        setAgencyList(data.result);
+        if (typeof window !== 'undefined') {
+            setTimeout(() => {
                 $('table').dataTable();
             }, 300);
-        } catch (error) {
-            console.error('Error fetching agencies:', error);
         }
-    };
+    } catch (error) {
+        console.error('Error fetching agencies:', error);
+    }
+};
 
     useEffect(() => {
         fetchData();
