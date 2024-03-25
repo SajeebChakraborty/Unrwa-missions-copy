@@ -20,9 +20,11 @@ function UmrahList() {
             const {data} = await axiosClient.get('facility');
             if (data.success == true) {
                 setUmrahList(data.result);
+                if (typeof window !== 'undefined') {
                 setTimeout( function(){
                     $('table').dataTable();
                 }, 300);
+                }
             }
         } catch (error) {
             //setProductList([]);
