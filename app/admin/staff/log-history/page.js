@@ -23,9 +23,11 @@ function Driver() {
                 const { data } = await axiosClient.get(`log-history/${id}`);
                 console.log(data);
                 setLogHistory(data.result);
+                if (typeof window !== 'undefined') {
                 setTimeout( function(){
                     $('table').dataTable();
                 }, 300);
+                }
             } catch (error) {
                 console.error('Error fetching drivers:', error);
             }
