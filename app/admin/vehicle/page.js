@@ -13,9 +13,11 @@ function Vehicle() {
         try {
             const { data } = await axiosClient.get('vehicle');
             setVehicleList(data.result);
+            if (typeof window !== 'undefined') {
             setTimeout( function(){
                 $('table').dataTable();
             }, 300);
+            }
         } catch (error) {
             console.error('Error fetching vehicles:', error);
         }
